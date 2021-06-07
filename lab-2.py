@@ -1,12 +1,13 @@
+#operations_count = 0
 
-operations_count = 0
 
 def main():
+    operations_count = 0
     ask_again = True
     while(ask_again):
         a = input("Enter the numerator: ")
         b = input("Enter the denominator: ")
-        result = perform_division(a,b)
+        result = perform_division(a,b,operations_count)
         print(result)
         ask_again = input("Do you want to perform another operation? Enter yes or no: ")
         if(ask_again == 'yes'):
@@ -16,8 +17,8 @@ def main():
             print("You performed " + str(operations_count) + " operations, bye!")
 
 
-def perform_division(a,b):
-    global operations_count
+def perform_division(a,b,operations_count):
+    #global operations_count
     try:
         operations_count += 1
         return int(a)/int(b)
